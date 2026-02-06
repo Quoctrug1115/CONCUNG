@@ -1,0 +1,266 @@
+html {
+    scroll-behavior: smooth; /* Hiệu ứng cuộn mượt */
+}
+
+/* Thêm màu nền khác biệt cho các section lẻ để dễ nhìn hơn */
+.products:nth-of-type(odd) {
+    background-color: #fff;
+    padding: 20px 0; /* Thêm padding nếu có màu nền */
+}
+/* --- Thiết lập chung --- */
+:root {
+    --primary-color: #ff379b; /* Màu hồng đặc trưng Concung */
+    --hover-color: #d61c78;
+    --bg-color: #f4f4f4;
+    --white: #ffffff;
+    --text-color: #333;
+    --gray-text: #666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* --- Header --- */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 800;
+    background: #fff;
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-style: italic;
+}
+
+/* Thanh tìm kiếm */
+.search-bar {
+    display: flex;
+    width: 50%;
+    background: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.action-item i {
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+/* --- Menu --- */
+.main-menu {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.main-menu ul {
+    display: flex;
+    gap: 30px;
+}
+
+.main-menu a {
+    display: block;
+    padding: 15px 0;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.main-menu a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Banner --- */
+.banner {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Products Section --- */
+.products {
+    margin: 30px auto;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.section-title h2 {
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.view-all {
+    color: var(--gray-text);
+    font-size: 14px;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cột */
+    gap: 15px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.product-info {
+    margin-top: 10px;
+}
+
+.product-name {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    height: 40px; /* Giới hạn chiều cao tiêu đề */
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.price-box {
+    margin-bottom: 10px;
+}
+
+.current-price {
+    color: #c92127; /* Màu đỏ giá tiền */
+    font-weight: 700;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.old-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 13px;
+}
+
+.btn-buy {
+    width: 100%;
+    padding: 8px;
+    background: var(--white);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-buy:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* --- Footer --- */
+footer {
+    background: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+    color: var(--gray-text);
+    border-top: 1px solid #ddd;
+}
